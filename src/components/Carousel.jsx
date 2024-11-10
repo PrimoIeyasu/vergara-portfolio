@@ -9,7 +9,7 @@ const Carousel = () => {
 
   const panels = [
     {
-      image: '/assets/CVSUweb.png',
+      image: 'assets/CVSUweb.png',
       text: 'My Own Version Of The CVSU Website',
       description:
         'We were tasked as our first project in ITEC 50 to create our own version of the CVSU Website.',
@@ -17,7 +17,7 @@ const Carousel = () => {
       link: 'https://primoieyasu.github.io/',
     },
     {
-      image: '/assets/ITWeb.png',
+      image: 'assets/ITWeb.png',
       text: 'About Us IT Website',
       description:
         'We were tasked as our second project in ITEC 50 to create our own IT Company about us website.',
@@ -25,14 +25,14 @@ const Carousel = () => {
       link: 'https://primoieyasu.github.io/FinalITWebsite/',
     },
     {
-      image: '/assets/wedding.png',
+      image: 'assets/wedding.png',
       text: 'Wedding Catering Reservation System',
       description: 'OOP Project to create our own management system.',
       buttonText: 'Github',
       link: 'https://github.com/PrimoIeyasu/Wedding-Catering-Reservation-System',
     },
     {
-      image: '/assets/bbird.jpg',
+      image: 'assets/bbird.jpg',
       text: 'Barrel Bird',
       description: 'A twist on the beloved flappy bird game.',
       buttonText: 'Github',

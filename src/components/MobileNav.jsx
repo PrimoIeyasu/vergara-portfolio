@@ -56,7 +56,7 @@ const MobileNav = () => {
         <div className="mt-10 mb-10 flex justify-center">
           <a href="/">
             <img
-              src="/assets/BlueLogohd.png"
+              src="assets/BlueLogohd.png"
               alt="Your Logo"
               width={200}
               height={60}

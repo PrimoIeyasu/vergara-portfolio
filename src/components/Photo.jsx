@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 const Photo = () => {
   return (
@@ -7,7 +7,7 @@ const Photo = () => {
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
-          transition: { delay: 0.9, duration: 0.4, ease: "easeIn" },
+          transition: { delay: 0.9, duration: 0.4, ease: 'easeIn' },
         }}
       >
         {/* Image */}
@@ -15,17 +15,17 @@ const Photo = () => {
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            transition: { delay: 0.9, duration: 0.4, ease: "easeInOut" },
+            transition: { delay: 0.9, duration: 0.4, ease: 'easeInOut' },
           }}
           className="w-[320px] h-[320px] xl:w-[420px] xl:h-[420px] absolute"
         >
           <img
-            src="/assets/circleprofile.png"
+            src="assets/circleprofile.png"
             alt="Profile"
             style={{
-              objectFit: "contain",
-              width: "100%",
-              height: "100%",
+              objectFit: 'contain',
+              width: '100%',
+              height: '100%',
             }}
           />
         </motion.div>

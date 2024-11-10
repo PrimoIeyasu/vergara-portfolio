@@ -50,7 +50,7 @@ const CTerminal = () => {
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
         <img
-          src="/assets/scanlines.png"
+          src="assets/scanlines.png"
           id="scan"
           className="noselect w-full h-full object-cover"
         />
@@ -64,7 +64,7 @@ const CTerminal = () => {
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
         <img
-          src="/assets/bezel.png"
+          src="assets/bezel.png"
           id="bezel"
           className="noselect w-full h-full object-cover"
         />
