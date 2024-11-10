@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import "@/css/FlickerText.css";
+import React, { useEffect, useState } from 'react';
+import '@/css/FlickerText.css';
 
 const TypingFlickerText = () => {
-  const fullText = "Jon Ken Heron Vergara";
+  const fullText = 'Jon Ken Heron Vergara';
   const [displayedText, setDisplayedText] = useState(fullText);
 
   useEffect(() => {
@@ -13,9 +13,7 @@ const TypingFlickerText = () => {
     return () => clearInterval(flickerInterval);
   }, [fullText]);
 
-  return (
-    <span className="text-yellow-400 flicker-effect">{displayedText}</span>
-  );
+  return <span className="flicker-effect">{displayedText}</span>;
 };
 
 export default TypingFlickerText;

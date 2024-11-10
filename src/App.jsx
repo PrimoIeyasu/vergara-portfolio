@@ -101,9 +101,6 @@ export default function App() {
 
       {/* About Me Section */}
       <section id="services" className="min-h-screen py-12">
-        <h2 className="text-4xl font-bold text-center mb-8 text-white">
-          About Me
-        </h2>
         <AboutMe />
       </section>
 
