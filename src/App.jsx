@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { FiDownload } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 
+import Header from '@/components/Header';
 import Social from '@/components/Social';
 import Photo from '@/components/Photo';
 import TypingFlickerText from '@/components/FlickerText';
