@@ -9,7 +9,7 @@ import Carousel from '@/components/Carousel';
 import CTerminal from '../components/CTerminal';
 import AboutMe from '../components/AboutMe';
 
-export default function Homepage() {
+export default function HomePage() {
   return (
     <div>
       {/* Sections */}
