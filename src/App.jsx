@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import '@/css/globals.css';
 import HomePage from './pages/HomePage';
-import Layout from './components/layout';
+import Layout from './components/Layout';
 // import SwiperWork from "./components/Carousel"; // Import your SwiperWork component
 
 export default function App() {
