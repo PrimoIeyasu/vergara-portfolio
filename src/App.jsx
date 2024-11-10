@@ -14,6 +14,7 @@ import AboutMe from '@/components/AboutMe'; // Adjusted import for correct path
 export default function App() {
   return (
     <div>
+      <Header />
       {/* Sections */}
       <section
         id="home"
