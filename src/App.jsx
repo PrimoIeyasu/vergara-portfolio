@@ -39,7 +39,7 @@ export default function App() {
                 Third-Year Computer Science Major
               </motion.span>
               <motion.h1
-                className="h1 text-white/90 text-3xl md:text-5xl lg:text-6xl"
+                className="h1 text-white/90 text-3xl md:text-5xl lg:text-7xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 0.8 }}
