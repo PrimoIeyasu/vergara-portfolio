@@ -1,0 +1,119 @@
+.section-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: auto;
+  width: 100%;
+}
+
+.Am-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #060c21; /* Set your desired background color here */
+  z-index: -1;
+}
+
+.Am-box {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  animation: appear 5s linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+  z-index: 0; /* Ensure it is above the background */
+}
+
+.Am-box::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #fff;
+  z-index: -1;
+}
+
+.Am-box::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #fff;
+  z-index: -2;
+  filter: blur(40px);
+}
+
+.Am-box::before,
+.Am-box::after {
+  background: linear-gradient(235deg, #66fcf1, #060c21, #66fcf1);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.Am-content {
+  padding: 20px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.about-me-title {
+  text-align: center;
+  font-size: 2.9rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 2rem;
+  width: 100%;
+  margin: auto;
+}
+
+.h1-Am {
+  font-size: 35px;
+  text-align: center;
+  color: #66fcf1;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .Am-box {
+    width: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-container {
+    min-height: 100vh;
+    justify-content: center;
+  }
+}
+
+@keyframes titleAppear {
+  from {
+    opacity: 0;
+    transform: scale(1.1); /* Slightly scaled up initially */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1); /* Return to normal size */
+  }
+}

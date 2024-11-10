@@ -1,0 +1,63 @@
+/* body {
+    background: linear-gradient(45deg, #2d2d2d 9%, #000 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .text {
+    font-family: "Fira Mono", monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2ch;
+    font-size: 14vw;
+    line-height: 1;
+    margin: 0;
+  } */
+  
+  .flicker-effect {
+    position: relative;
+    color: #66fCF1; 
+    animation: flicker 3.5s linear infinite;
+    text-shadow: 
+      -1px -1px 0 rgba(255, 255, 255, 0.4),
+      1px -1px 0 rgba(255, 255, 255, 0.4),
+      -1px 1px 0 rgba(255, 255, 255, 0.4),
+      1px 1px 0 rgba(255, 255, 255, 0.4),
+      0 -2px 8px,
+      0 0 2px,
+      0 0 15px #66fCF1,
+      0 0 15px #44e3ff,
+      0 0 5px #00bbff,
+      0 2px 3px #000;
+  }
+  
+  @keyframes flicker {
+    0%, 19.9%, 22%, 62.9%, 64%, 64.9%, 70%, 100% {
+      opacity: 0.99;
+    }
+    20%, 21.9%, 63%, 63.9%, 65%, 69.9% {
+      opacity: 0.4;
+    }
+  }
+
+  .flicker-circle {
+    position: relative;
+    animation: flicker-circle 3.5s linear infinite;
+  }
+  
+  @keyframes flicker-circle {
+    0%, 19.9%, 22%, 62.9%, 64%, 64.9%, 70%, 100% {
+      opacity: 0.99;
+      stroke: #66fCF1; /* Changed to the same color as the text */
+      filter: drop-shadow(0 0 10px rgba(102, 252, 241, 0.8)) 
+              drop-shadow(0 0 20px rgba(102, 252, 241, 0.6)); /* Glow in the same color */
+    }
+    20%, 21.9%, 63%, 63.9%, 65%, 69.9% {
+      opacity: 0.4;
+      stroke: rgba(102, 252, 241, 0.4); /* Dimmed version of the glow color */
+      filter: none; /* Remove glow during this state */
+    }
+  }
+  

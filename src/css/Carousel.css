@@ -1,0 +1,77 @@
+/* Keyframe animations */
+@keyframes easeIn {
+  from {
+    opacity: 0;
+    transform: translateY(150%) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes easeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(150%) scale(0.5);
+  }
+}
+
+/* The text-container */
+.text-container {
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Show and hide animations for the text */
+.text-container.show {
+  animation: easeIn 1s forwards; /* The text morphs in */
+}
+
+.text-container.hide {
+  animation: easeOut 0.7s forwards; /* The text morphs out */
+}
+
+/* Carousel item size transition */
+.carousel-item {
+  transition: all 1s ease-in-out;
+}
+
+/* Animating vertical text movement */
+.carousel-item .absolute {
+  transition: transform 1s ease-in-out;
+}
+
+.carousel-item .absolute span {
+  transition: transform 1s ease-in-out;
+}
+
+/* Vertical text movement for small container */
+.carousel-item .absolute {
+  transform-origin: center;
+}
+
+.carousel-item .absolute {
+  transform: translateY(0);
+}
+
+.carousel-item .absolute span {
+  transition: transform 1s ease-in-out;
+  transform: rotate(0deg);
+}
+
+.carousel-item .absolute {
+  transition: transform 1s ease-in-out;
+}
+
+/* Apply styles for mobile and smaller screens */
+@media (max-width: 640px) {
+  .carousel-item img {
+    width: 100%; /* Or any size logic */
+    height: auto;
+  }
+}

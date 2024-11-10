@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css?family=VT323");
+
+:root {
+  --animation-type-duration: 3s;
+  --animation-reveal-duration: 0s;
+  --animation-reveal-delay-email: 1.8s;
+  --animation-reveal-delay-linkedin: 4.5s;
+  --animation-reveal-delay-github: 5.6s;
+  --animation-remove-border-duration: 1s;
+  --animation-remove-border-delay-email: 4s;
+  --animation-remove-border-delay-linkedin: 5.5s;
+  --animation-remove-border-delay-h1: 1.5s;
+  --animation-steps: 20;
+}
+
+#screen {
+  position: relative;
+  width: auto;
+  min-height: 900px;
+  /* background-color: green; */
+  padding: 50px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+#scan,
+#bezel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.232);
+}
+
+#content {
+  font-family: VT323;
+  color: #7bdc42;
+  font-size: 20px;
+  text-shadow: 1px 1px 2px #7bdc42, 0 0 1em #7bdc42, 0 0 0.2em #7bdc42;
+  max-width: calc(100% - 100px);
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.other-info {
+  white-space: nowrap;
+}
+
+#content h1 {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 30px 10px 30px 30px;
+  color: #7bdc42;
+  text-shadow: 1px 1px 2px #70c93d, 0 0 5px #7bdd43, 0 0 0.2em #8cfc4b;
+  overflow: hidden;
+  animation: type var(--animation-type-duration) steps(50, end),
+    caret-blink 0.8s ease infinite,
+    remove-border var(--animation-remove-border-duration)
+      var(--animation-remove-border-delay-h1) forwards;
+  border-right: 10px solid #7bdc42;
+  max-width: max-content;
+}
+
+#content h2:nth-of-type(1) {
+  white-space: nowrap;
+  margin: 30px 10px 30px 30px;
+  padding: 0;
+  color: #7bdc42;
+  text-shadow: 1px 1px 2px #70c93d, 0 0 1em #7bdd43, 0 0 0.2em #7bdc42;
+  overflow: hidden;
+  visibility: hidden; /* Initially hidden */
+  opacity: 0; /* Initially hidden */
+  border-right: 10px solid #7bdc42;
+  max-width: max-content;
+  animation: reveal 0s var(--animation-reveal-delay-email) forwards,
+    type var(--animation-type-duration) steps(50, end)
+      var(--animation-reveal-delay-email) forwards,
+    caret-blink 0.8s ease infinite var(--animation-reveal-delay-email),
+    remove-border var(--animation-remove-border-duration)
+      var(--animation-remove-border-delay-email) forwards;
+}
+
+#content h2:nth-of-type(2) {
+  margin: 30px 10px 30px 30px;
+  padding: 0;
+  color: #7bdc42;
+  text-shadow: 1px 1px 2px #70c93d, 0 0 1em #7bdd43, 0 0 0.2em #7bdc42;
+  overflow: hidden;
+  visibility: hidden; /* Initially hidden */
+  opacity: 0; /* Initially hidden */
+  border-right: 10px solid #7bdc42;
+  max-width: max-content;
+  animation: reveal 0s var(--animation-reveal-delay-linkedin) forwards,
+    type var(--animation-type-duration) steps(50, end)
+      var(--animation-reveal-delay-linkedin) forwards,
+    caret-blink 0.8s ease infinite var(--animation-reveal-delay-linkedin),
+    remove-border var(--animation-remove-border-duration)
+      var(--animation-remove-border-delay-linkedin) forwards;
+}
+
+#content h2:nth-of-type(3) {
+  /* Apply to the third h2 element */
+  margin: 30px 10px 30px 30px;
+  padding: 0;
+  color: #7bdc42;
+  text-shadow: 1px 1px 2px #70c93d, 0 0 1em #7bdd43, 0 0 0.2em #7bdc42;
+  overflow: hidden;
+  visibility: hidden; /* Initially hidden */
+  opacity: 0; /* Initially hidden */
+  border-right: 10px solid #7bdc42;
+  max-width: max-content;
+  animation: reveal 0s var(--animation-reveal-delay-github) forwards,
+    type var(--animation-type-duration) steps(50, end)
+      var(--animation-reveal-delay-github) forwards,
+    caret-blink 0.8s ease infinite var(--animation-reveal-delay-github);
+}
+
+/* Keyframes for revealing h2 */
+@keyframes reveal {
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.underline-email {
+  text-decoration: underline;
+}
+
+/* Typing animation */
+@keyframes type {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes caret-blink {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #7bdc42;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+
+@keyframes remove-border {
+  from {
+    border-right: 10px solid #7bdc42;
+  }
+  to {
+    border-right: none;
+  }
+}
+
+/* Responsive font sizes and animation delays */
+@media (max-width: 1200px) {
+  :root {
+    --animation-type-duration: 2.5s;
+    --animation-reveal-delay-email: 2s;
+    --animation-reveal-delay-linkedin: 4s;
+    --animation-reveal-delay-github: 5s;
+    --animation-steps: 40;
+  }
+  #content h1 {
+    font-size: 70px;
+  }
+  #content h2 {
+    margin: 20px 0 0 35px;
+  }
+}
+
+@media (max-width: 960px) {
+  :root {
+    --animation-type-duration: 2.5s;
+    --animation-reveal-delay-email: 2s;
+    --animation-reveal-delay-linkedin: 4s;
+    --animation-reveal-delay-github: 5s;
+    --animation-steps: 40;
+  }
+  #content h1 {
+    font-size: 70px;
+  }
+  #content h2 {
+    margin: 20px 0 0 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --animation-type-duration: 2.5s;
+    --animation-reveal-delay-email: 2.5s;
+    --animation-reveal-delay-linkedin: 4.5s;
+    --animation-reveal-delay-github: 5.5s;
+  }
+  #content h1 {
+    font-size: 60px;
+  }
+  #content h2 {
+    margin: 20px 0 0 30px;
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --animation-type-duration: 1.5s;
+    --animation-reveal-delay-email: 1.5s;
+    --animation-reveal-delay-linkedin: 3s;
+    --animation-reveal-delay-github: 4s;
+    --animation-steps: 10;
+  }
+  #content h1 {
+    margin: 30px 0 0 0;
+    font-size: 55px;
+  }
+  #content h2 {
+    margin: 20px 0 0 3px;
+    font-size: 21px;
+  }
+}
