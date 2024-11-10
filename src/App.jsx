@@ -9,10 +9,13 @@ import TypingFlickerText from '@/components/FlickerText';
 import Carousel from '@/components/Carousel';
 import CTerminal from '@/components/CTerminal'; // Adjusted import for correct path
 import AboutMe from '@/components/AboutMe'; // Adjusted import for correct path
+import Header from '@/components/Header';
 
 export default function App() {
   return (
     <div>
+      <Header />
+
       {/* Sections */}
       <section
         id="home"
