@@ -3,8 +3,8 @@ import '@/css/transnav.css';
 
 const links = [
   { name: 'profile', path: '#home' },
-  { name: 'about Me', path: '#services' },
-  { name: 'projects', path: '#work' },
+  { name: 'about Me', path: '#aboutme' },
+  { name: 'projects', path: '#projects' },
   { name: '', path: '#contact' },
 ];
 

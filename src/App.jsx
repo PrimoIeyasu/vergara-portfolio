@@ -100,13 +100,13 @@ export default function App() {
       </section>
 
       {/* About Me Section */}
-      <section id="services" className="min-h-screen py-12">
+      <section id="aboutme" className="min-h-screen py-12">
         <AboutMe />
       </section>
 
       {/* Work Section */}
       <section
-        id="work"
+        id="projects"
         className="min-h-screen"
         style={{ paddingTop: '20px' }}
       >

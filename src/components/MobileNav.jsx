@@ -7,8 +7,8 @@ import { Button } from './ui/button';
 
 const links = [
   { name: 'profile', path: '#home' },
-  { name: 'about Me', path: '#services' },
-  { name: 'projects', path: '#work' },
+  { name: 'about Me', path: '#aboutme' },
+  { name: 'projects', path: '#projects' },
   { name: '', path: '#contact' },
 ];
 
@@ -20,7 +20,7 @@ const MobileNav = () => {
     const observerOptions = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.5,
+      threshold: 0.25,
     };
 
     const observer = new IntersectionObserver((entries) => {
