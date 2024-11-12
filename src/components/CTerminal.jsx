@@ -71,7 +71,7 @@ const CTerminal = () => {
       </motion.div>
 
       {/* Content section */}
-      <div id="content" className="relative pt-8 px-5 text-center">
+      <div id="content" className="relative pt-8 text-center">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24 px-4 sm:px-6 md:px-8">
           {/* Contact Information */}
           <div className="order-1 xl:order-none mb-8 xl:mb-0 relative xl:-translate-x-6 w-full">

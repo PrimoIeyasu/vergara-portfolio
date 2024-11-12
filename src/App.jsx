@@ -71,7 +71,7 @@ export default function App() {
                     size="lg"
                     className="uppercase flex items-center gap-2"
                     onClick={() =>
-                      window.open('/path/to/your/CV.pdf', '_blank')
+                      window.open('assets/Vergara-Resume.pdf', '_blank')
                     } // Adjust the CV path
                   >
                     <span>Download CV</span>

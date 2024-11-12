@@ -10,7 +10,7 @@ const Carousel = () => {
   const panels = [
     {
       image: 'assets/CVSUweb.png',
-      text: 'My Own Version Of The CVSU Website',
+      text: 'CVSU Website',
       description:
         'We were tasked as our first project in ITEC 50 to create our own version of the CVSU Website.',
       buttonText: 'Visit My Website',
@@ -18,7 +18,7 @@ const Carousel = () => {
     },
     {
       image: 'assets/ITWeb.png',
-      text: 'About Us IT Website',
+      text: 'IT Website',
       description:
         'We were tasked as our second project in ITEC 50 to create our own IT Company about us website.',
       buttonText: 'Visit My Website',
@@ -26,7 +26,7 @@ const Carousel = () => {
     },
     {
       image: 'assets/wedding.png',
-      text: 'Wedding Catering Reservation System',
+      text: 'Catering Reservation System',
       description: 'OOP Project to create our own management system.',
       buttonText: 'Github',
       link: 'https://github.com/PrimoIeyasu/Wedding-Catering-Reservation-System',
@@ -105,7 +105,9 @@ const Carousel = () => {
               onClick={() => handleClick(index)}
               className={`h-full rounded-2xl bg-white cursor-pointer transition-all duration-1000 ease-in-out overflow-hidden ${
                 expandedIndex === index
-                  ? 'w-[200%]'
+                  ? index === 3
+                    ? 'w-[80%] sm:w-[40%] md:w-[40%] lg:w-[25%]' // Responsive width for "Barrel Bird"
+                    : 'w-[200%]' // Default expanded width for other panels
                   : 'w-[15%] hover:bg-gray-200'
               } min-w-[40px] block relative`}
               initial={{ opacity: 0, y: 100 }}
@@ -142,8 +144,12 @@ const Carousel = () => {
                   expandedIndex === index ? 'show' : 'hide'
                 }`}
               >
-                <h2 className="text-4xl font-bold">{panel.text}</h2>
-                <p className="mt-2 text-lg">{panel.description}</p>
+                <h2 className="text-2xl sm:text-xl md:text-4xl font-bold">
+                  {panel.text}
+                </h2>
+                <p className="mt-2 text-base sm:text-sm md:text-lg">
+                  {panel.description}
+                </p>
                 <a href={panel.link} target="_blank" rel="noopener noreferrer">
                   <button className="mt-4 px-6 py-3 bg-[#66FCF1] hover:bg-[#50c6be] text-black rounded-lg">
                     {panel.buttonText}

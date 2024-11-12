@@ -41,7 +41,7 @@
   color: #7bdc42;
   font-size: 20px;
   text-shadow: 1px 1px 2px #7bdc42, 0 0 1em #7bdc42, 0 0 0.2em #7bdc42;
-  max-width: calc(100% - 100px);
+  max-width: 100%;
   box-sizing: border-box;
   overflow: visible;
 }
