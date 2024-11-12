@@ -1,25 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"], 
-  content: [
-    "./index.html", 
-    "./src/**/*.{js,ts,jsx,tsx}", 
-    
-  ],
-  prefix: "", 
+  darkMode: ['class'],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  prefix: '',
   theme: {
     container: {
       center: true,
-      padding: "15px",
+      padding: '15px',
     },
     screens: {
+      xsm: '480px',
       sm: '640px',
       md: '768px',
       lg: '960px',
       xl: '1200px',
     },
     fontFamily: {
-      primary: "var(--font-jetbrainsMono)", 
+      primary: 'var(--font-jetbrainsMono)',
     },
     extend: {
       colors: {
@@ -30,13 +27,11 @@ module.exports = {
         },
       },
       borderRadius: {
-        lg: 'var(--radius)', 
+        lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"), 
-  ],
+  plugins: [require('tailwindcss-animate')],
 };
