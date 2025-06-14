@@ -1,5 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '@/css/Carousel.css';
+import { FaHtml5, FaCss3Alt, FaReact, FaGithub } from 'react-icons/fa';
+import {
+  SiJavascript,
+  SiLaravel,
+  SiPhp,
+  SiTailwindcss,
+  SiMysql,
+} from 'react-icons/si';
+import { FaJava } from 'react-icons/fa';
+import { SiPython, SiDjango, SiSqlite } from 'react-icons/si';
+
 import { motion, useAnimation } from 'framer-motion';
 
 const Carousel = () => {
@@ -15,6 +26,11 @@ const Carousel = () => {
         'We were tasked as our first project in ITEC 50 to create our own version of the CVSU Website.',
       buttonText: 'Visit My Website',
       link: 'https://primoieyasu.github.io/',
+      technologies: [
+        { name: 'HTML5', icon: <FaHtml5 />, color: 'bg-orange-500' },
+        { name: 'CSS3', icon: <FaCss3Alt />, color: 'bg-blue-500' },
+        { name: 'JavaScript', icon: <SiJavascript />, color: 'bg-yellow-400' },
+      ],
     },
     {
       image: 'assets/ITWeb.png',
@@ -23,6 +39,11 @@ const Carousel = () => {
         'We were tasked as our second project in ITEC 50 to create our own IT Company about us website.',
       buttonText: 'Visit My Website',
       link: 'https://primoieyasu.github.io/FinalITWebsite/',
+      technologies: [
+        { name: 'HTML5', icon: <FaHtml5 />, color: 'bg-orange-500' },
+        { name: 'CSS3', icon: <FaCss3Alt />, color: 'bg-blue-500' },
+        { name: 'JavaScript', icon: <SiJavascript />, color: 'bg-yellow-400' },
+      ],
     },
     {
       image: 'assets/wedding.png',
@@ -30,6 +51,18 @@ const Carousel = () => {
       description: 'OOP Project to create our own management system.',
       buttonText: 'Github',
       link: 'https://github.com/PrimoIeyasu/Wedding-Catering-Reservation-System',
+      technologies: [
+        {
+          name: 'Java',
+          icon: <FaJava />,
+          color: 'bg-red-500',
+        },
+        {
+          name: 'MySQL',
+          icon: <SiMysql />,
+          color: 'bg-blue-600',
+        },
+      ],
     },
     {
       image: 'assets/bbird.jpg',
@@ -37,6 +70,50 @@ const Carousel = () => {
       description: 'A twist on the beloved flappy bird game.',
       buttonText: 'Github',
       link: 'https://github.com/MrkDchvz/BarrelBird',
+      technologies: [
+        {
+          name: 'Java',
+          icon: <FaJava />,
+          color: 'bg-red-500',
+        },
+      ],
+    },
+    {
+      image: 'assets/enroll.png',
+      text: 'Enrollment System',
+      description:
+        'A full-stack Enrollment Management System built for our final COSC 75 project.',
+      buttonText: 'Github',
+      link: 'https://github.com/Daves03/Project', // Replace with actual repo if different
+      technologies: [
+        { name: 'Laravel', icon: <SiLaravel />, color: 'bg-red-600' },
+        { name: 'MySQL', icon: <SiMysql />, color: 'bg-blue-600' },
+        { name: 'React', icon: <FaReact />, color: 'bg-cyan-500' },
+      ],
+    },
+    {
+      image: 'assets/pins.png',
+      text: 'Pinspire',
+      description: 'Pinspire — a Pinterest clone built with Django.',
+      buttonText: 'Github',
+      link: 'https://github.com/PrimoIeyasu/Pinspire_Project',
+      technologies: [
+        {
+          name: 'Python',
+          icon: <SiPython />,
+          color: 'bg-blue-500',
+        },
+        {
+          name: 'Django',
+          icon: <SiDjango />,
+          color: 'bg-green-700',
+        },
+        {
+          name: 'SQLite',
+          icon: <SiSqlite />,
+          color: 'bg-gray-600',
+        },
+      ],
     },
   ];
 
@@ -150,6 +227,19 @@ const Carousel = () => {
                 <p className="mt-2 text-base sm:text-sm md:text-lg">
                   {panel.description}
                 </p>
+
+                {/* Tech stack badges */}
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {panel.technologies?.map((tech, techIndex) => (
+                    <div
+                      key={techIndex}
+                      className={`flex items-center gap-2 px-3 py-1 text-sm rounded-full text-white ${tech.color}`}
+                    >
+                      {tech.icon}
+                      <span>{tech.name}</span>
+                    </div>
+                  ))}
+                </div>
                 <a href={panel.link} target="_blank" rel="noopener noreferrer">
                   <button className="mt-4 px-6 py-3 bg-[#66FCF1] hover:bg-[#50c6be] text-black rounded-lg">
                     {panel.buttonText}

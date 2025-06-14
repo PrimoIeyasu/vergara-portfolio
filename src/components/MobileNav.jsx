@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useLocation, Link } from 'react-router-dom';
 import { DialogTitle } from '@radix-ui/react-dialog';
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -6,45 +6,19 @@ import { CiMenuFries } from 'react-icons/ci';
 import { Button } from './ui/button';
 
 const links = [
-  { name: 'profile', path: '#home' },
-  { name: 'about Me', path: '#aboutme' },
-  { name: 'projects', path: '#projects' },
-  { name: '', path: '#contact' },
+  { name: 'about Me', path: '/' },
+  // { name: 'about Me', path: '/aboutme' },
+  { name: 'skills', path: '/skills' },
+  { name: 'projects', path: '/projects' },
+  { name: 'challenges', path: '/challenges' },
+  { name: 'plans', path: '/future' },
+  { name: 'resume', path: '/resume' },
+  { name: 'contact', path: '/contact' },
 ];
 
 const MobileNav = () => {
-  const [activeLink, setActiveLink] = useState('#home');
-
-  useEffect(() => {
-    const sections = links.map((link) => document.querySelector(link.path));
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.25,
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveLink(`#${entry.target.id}`);
-        }
-      });
-    }, observerOptions);
-
-    sections.forEach((section) => {
-      if (section) {
-        observer.observe(section);
-      }
-    });
-
-    return () => {
-      sections.forEach((section) => {
-        if (section) {
-          observer.unobserve(section);
-        }
-      });
-    };
-  }, []);
+  const location = useLocation();
+  const activeLink = location.pathname;
 
   return (
     <Sheet>
@@ -54,7 +28,7 @@ const MobileNav = () => {
       <SheetContent className="flex flex-col">
         {/* Logo */}
         <div className="mt-10 mb-10 flex justify-center">
-          <a href="/">
+          <Link to="/">
             <img
               src="assets/BlueLogohd.png"
               alt="Your Logo"
@@ -62,7 +36,7 @@ const MobileNav = () => {
               height={60}
               className="text-2xl items-center"
             />
-          </a>
+          </Link>
         </div>
 
         {/* Nav Links */}
@@ -71,31 +45,30 @@ const MobileNav = () => {
             const isActive = activeLink === link.path;
 
             return (
-              <a
-                href={link.path}
+              <Link
+                to={link.path}
                 key={index}
-                className={`text-xl capitalize transition-all relative before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-1 before:bg-[#66FCF1] before:transition-all 
+                className={`text-xl capitalize font-medium transition-all relative before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-1 before:bg-[#66FCF1] before:transition-all 
                   ${
                     isActive
-                      ? 'text-[#66FCF1] border-b-2 border-[#66FCF1] before:w-full'
-                      : 'text-white hover:[#66FCF1] hover:before:w-full'
-                  }
-                `}
+                      ? 'text-[#66FCF1] before:w-full'
+                      : 'text-white hover:text-[#66FCF1] hover:before:w-full'
+                  }`}
               >
                 {link.name}
-              </a>
+              </Link>
             );
           })}
         </nav>
 
         {/* Contact Button */}
-        <a href="#contact" className="flex justify-center">
+        <Link to="/contact" className="flex justify-center">
           <Button className="rounded-full bg-[#66FCF1] px-6 py-4 hover:bg-[#50c6be] text-black hover:text-white">
             <span className="font-bold">Contact me!</span>
           </Button>
-        </a>
+        </Link>
 
-        {/* Dialog Title for Accessibility */}
+        {/* Dialog Title */}
         <VisuallyHidden>
           <DialogTitle>Mobile Navigation Menu</DialogTitle>
         </VisuallyHidden>

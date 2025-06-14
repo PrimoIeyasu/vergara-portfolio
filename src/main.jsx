@@ -1,15 +1,15 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRouter
-import App from './App.jsx';
-import '@/css/globals.css';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+import './css/globals.css';
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <Router>
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <BrowserRouter basename="/vergara-portfolio">
       {' '}
-      {/* Wrap your application in Router */}
+      {/* ← Important fix */}
       <App />
-    </Router>
-  </StrictMode>
+    </BrowserRouter>
+  </React.StrictMode>
 );

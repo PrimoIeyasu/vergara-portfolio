@@ -33,7 +33,7 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center transition-all duration-700 max-h-14">
         <Link to="/">
           <img
-            src="assets/BlueLogohd.png"
+            src="/vergara-portfolio/assets/BlueLogohd.png"
             alt="Logo"
             className={`transition-all duration-300 ${
               isScrolled ? 'h-32 w-auto' : 'h-40 w-auto'

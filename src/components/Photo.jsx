@@ -20,7 +20,7 @@ const Photo = () => {
           className="w-[320px] h-[320px] xl:w-[420px] xl:h-[420px] absolute"
         >
           <img
-            src="assets/circleprofile.png"
+            src="/vergara-portfolio/assets/circleprofile.png"
             alt="Profile"
             style={{
               objectFit: 'contain',

@@ -4,37 +4,54 @@ import '@/css/AboutMe.css';
 const AboutMe = () => {
   return (
     <div className="section-container">
-      <h1 className="about-me-title">About Me</h1>
+      <h1 className="about-me-title">Who am I?</h1>
+      {/* About Me Box */}
+      <div className="Am-box">
+        <div className="Am-background"></div> {/* Background wrapper */}
+        <div className="Am-content">
+          <h1 className="h1-Am">About Me</h1>
+          <p className="text-justify text-left">
+            I'm an easy-going and friendly guy who enjoys life's simple
+            pleasures. I aim to live a peaceful, normal life while pursuing my
+            passion for technology and continuous self-improvement. Whether it's
+            coding, gaming, or just relaxing, I always try to maintain balance
+            and good vibes.
+          </p>
+        </div>
+      </div>
       <div className="Am-box">
         <div className="Am-background"></div> {/* Background wrapper */}
         <div className="Am-content">
           <h1 className="h1-Am">Hobbies</h1>
           <p>
+            <span className="text-[#66fcf1]">•</span> Playing my Guitar <br />
             <span className="text-[#66fcf1]">•</span> Playing Video Games <br />
             <span className="text-[#66fcf1]">•</span> Watching Random Videos{' '}
             <br />
-            <span className="text-[#66fcf1]">•</span> Watching Anime and Reading
-            Manga
+            <span className="text-[#66fcf1]">•</span> Watching TV shows, Movies,
+            Anime and Reading Manga
           </p>
         </div>
       </div>
       <div className="Am-box">
         <div className="Am-background"></div> {/* Background wrapper */}
         <div className="Am-content">
-          <h1 className="h1-Am">Skills</h1>
-          <p>
-            <span className="text-[#66fcf1]">•</span> Web Development <br />
-            <span className="text-[#66fcf1]">•</span> Basic Java <br />
-            <span className="text-[#66fcf1]">•</span> Basic Python <br />
-            <span className="text-[#66fcf1]">•</span> PHP
+          <h1 className="h1-Am">Family Background</h1>
+          <p className="text-justify text-left">
+            I live with my mother and stepfather. My mother is a licensed
+            radiologic technologist (RadTech), and my stepfather works as a
+            Social Screening Officer (SSO) at NAIA Airport. I also have two
+            younger siblings: a 13-year-old sister who is currently in Grade 7,
+            and a 7-year-old brother in Grade 1.
           </p>
         </div>
       </div>
+
       <div className="Am-box">
         <div className="Am-background"></div> {/* Background wrapper */}
         <div className="Am-content">
           <h1 className="h1-Am">Goals</h1>
-          <p>
+          <p className="text-justify text-left">
             As a third-year Computer Science major, I’m focused on mastering
             core concepts like algorithms, data structures, and software
             engineering, while also expanding my practical skills through
